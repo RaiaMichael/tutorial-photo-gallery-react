@@ -9,11 +9,7 @@ const Tab2: React.FC = () => {
 
   return (
     <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>Photo Gallery</IonTitle>
-        </IonToolbar>
-      </IonHeader>
+      
       <IonContent>
       <IonHeader collapse="condense">
           <IonToolbar>
@@ -29,12 +25,6 @@ const Tab2: React.FC = () => {
             ))}
           </IonRow>
         </IonGrid>
-
-        <IonFab vertical="bottom" horizontal="center" slot="fixed">
-          <IonFabButton onClick={() => takePhoto()}>
-            <IonIcon icon={camera}></IonIcon>
-          </IonFabButton>
-        </IonFab>
 
         <IonActionSheet
           isOpen={!!photoToDelete}
