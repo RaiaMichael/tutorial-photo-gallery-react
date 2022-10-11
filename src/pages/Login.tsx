@@ -37,11 +37,11 @@ const Login: React.FC = () => {
       body: JSON.stringify({ name: name, password: password }),
     });
     const result = await res.json();
-    console.log(result);
+    console.log(result.item[0]._id!);
     // return
    
     if (result.statusCode === 200) {
-      router.push('/tab1')
+      router.push(`/tab1?user_id=${result.item[0]._id}`)
     } else {
       setErrorMsg("invalid username or passworrd!");
 

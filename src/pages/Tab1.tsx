@@ -32,6 +32,10 @@ const Tab1: React.FC = () => {
   const [text, setText] = useState<string>();
   const [data, setData] = useState<Grades[]>([])
 
+  let params = new URLSearchParams(useLocation().search)
+  let user_id = params.get('user_id')
+  console.log("HAHAHAHAHA",user_id)
+
   async function getData(){
     const res = await fetch('http://localhost:8080/api/v1/grade/get')
     const ele = await res.json()
@@ -49,7 +53,7 @@ const Tab1: React.FC = () => {
       <IonContent>
         <div className="PLevel 1To3">
       {data.map((ite)=>(
-        <Link to={`/subject?grade_id=${ite._id}`}>
+        <Link to={`/subject?grade_id=${ite._id}&user_id=${user_id}`}>
         <button key={ite._id} className="GradeButton p1"><h1>{ite.level}</h1></button>
         </Link>
           

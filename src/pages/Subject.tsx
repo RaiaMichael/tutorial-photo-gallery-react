@@ -18,6 +18,7 @@ const Subject: React.FC = () => {
 
   let params = new URLSearchParams(useLocation().search)
   let grade_id = params.get('grade_id')
+  let user_id= params.get('user_id')
   
   console.log("比我睇下",grade_id)
 
@@ -51,7 +52,7 @@ const Subject: React.FC = () => {
         <div className='subject'>
       <IonSegment onIonChange={(e: { detail: { value: any; }; }) => console.log(`${e.detail.value} segment selected`)}>
         {data.map((sub)=>(
-          <Link to={`/question?subject_id=${sub._id}&grade_id=${grade_id}`}>
+          <Link to={`/question?subject_id=${sub._id}&grade_id=${grade_id}&user_id=${user_id}`}>
           <button className="chineseButton" key={sub._id}>
           <IonLabel><IonImg src={sub.picture} /></IonLabel>
           </button>

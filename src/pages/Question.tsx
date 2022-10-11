@@ -36,6 +36,7 @@ const Question: React.FC = () => {
   let params = new URLSearchParams(useLocation().search);
   let grade_id = params.get("grade_id");
   let subject_id = params.get("subject_id");
+  let user_id= params.get('user_id')
 
   async function getData() {
     const res = await fetch(
@@ -45,7 +46,7 @@ const Question: React.FC = () => {
         headers: {
           "Content-Type": "application/json;charset=utf-8",
         },
-        body: JSON.stringify({ subject: subject_id, grade: grade_id }),
+        body: JSON.stringify({ subject: subject_id, grade: grade_id}),
       }
     );
     const question = await res.json();
@@ -67,7 +68,7 @@ const Question: React.FC = () => {
         headers: {
           "Content-Type": "application/json;charset=utf-8",
         },
-        body: JSON.stringify({ _id: data[0]._id, answer: selected }),
+        body: JSON.stringify({ _id: data[0]._id, answer: selected, user: user_id }),
       }
     );
     const question = await res.json();
