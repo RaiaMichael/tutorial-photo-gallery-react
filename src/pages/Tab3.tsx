@@ -1,24 +1,27 @@
 import React from 'react';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonBackdrop, IonButton, IonCard, IonCardContent, IonContent, IonHeader, IonIcon, IonItem, IonLabel, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import ExploreContainer from '../components/ExploreContainer';
 import './Tab3.css';
+import { person, pin } from 'ionicons/icons';
 
 const Tab3: React.FC = () => {
   return (
     <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>Tab 3</IonTitle>
-        </IonToolbar>
-      </IonHeader>
+      <div className='userData'>
+        <IonCard>
+          <IonItem>
+            <IonIcon icon={person} slot="start" />
+            <IonLabel></IonLabel>
+            <IonButton fill="outline" slot="end">View</IonButton>
+          </IonItem>
+
+          <IonCardContent></IonCardContent>
+        </IonCard>
+        </div>
       <IonContent>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">Tab 3</IonTitle>
-          </IonToolbar>
-        </IonHeader>
-        <ExploreContainer name="Tab 3 page" />
+        <ExploreContainer name="About us" />
       </IonContent>
+     
     </IonPage>
   );
 };

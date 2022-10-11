@@ -1,0 +1,44 @@
+
+.QuestionCard {
+    padding: 50px;
+    margin-top: 10vh;
+    font-size: 200%;
+    background-color:rgb(252, 248, 56);
+    box-shadow: 3px 3px 3px 3px;
+}
+
+.answerChoice {
+    margin-top: 20px;
+}
+
+.A {
+    padding: 5px;
+}
+
+.B {
+    padding: 5px;
+}
+
+.C {
+    padding: 5px;
+}
+
+.D {
+    padding: 5px;
+}
+
+.submit {
+    height: 50px;
+    width: 80px;
+    border-radius: 10px;
+    border: solid rgba(32, 28, 28, 0.253);
+    margin-top: 30px;
+    background-color: rgb(87, 213, 245);
+}
+
+.AnswerCard {
+    padding: 30px;
+    margin-top: 20px;
+    font-size: 30px;
+    background-color:rgb(124, 248, 221);
+}

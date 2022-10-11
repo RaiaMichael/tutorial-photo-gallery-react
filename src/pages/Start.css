@@ -1,11 +1,22 @@
-body  {
-    /* background-image: url("/public/startPageIcon.png"); */
-    background-color: aqua;
+
+
+--ion-content.background {
+   
 }
+
+:root {
+    --ion-background-color: #f3f1d2; 
+}
+
+.bgImage {
+    display: flex;
+    justify-content: center;
+}
+
 .Startbutton {
     background-color: #4CAF50; /* Green */
     border: none;
-    color: white;
+    color: rgb(255, 255, 255);
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;

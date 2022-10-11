@@ -1,3 +1,18 @@
-ion-content ion-toolbar {
+ion-content  {
   --background: translucent;
 }
+
+.title {
+  text-align: center;
+  font-size: larger;
+}
+
+.rankOfSubject {
+  display: flex;
+  justify-content: center;
+}
+
+
+
+
+

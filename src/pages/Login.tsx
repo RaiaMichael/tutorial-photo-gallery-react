@@ -17,24 +17,60 @@ import {
   IonItemDivider,
   IonList,
 } from "@ionic/react";
+import { Link } from "react-router-dom";
+
 
 const Login: React.FC = () => {
-  const [text, setText] = useState<string>();
+  const [name, setName] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [errorMsg, setErrorMsg] = useState<string>("");
+
+  async function getUser() {
+    console.log("in side---");
+    const res = await fetch("http://localhost:8080/api/v1/user/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json;charset=utf-8",
+      },
+      body: JSON.stringify({ name: name, password: password }),
+    });
+    const result = await res.json();
+    console.log(result);
+    // return
+    if (result.statusCode === 200) {
+     
+    } else {
+      setErrorMsg("invalid username or passworrd!");
+
+      return;
+    }
+  }
+
   return (
-    <IonPage style={{padding: "50px"}}>
-      
+    <IonPage style={{ padding: "50px" }}>
       <IonContent>
-      
-      <IonItem>
-            <IonLabel position="stacked">Name</IonLabel>
-            <IonInput value={text}> </IonInput>
-          </IonItem>
-          <IonItem>
-            <IonLabel position="stacked">Password</IonLabel>
-            <IonInput value={text}> </IonInput>
-          </IonItem>
+        <IonItem routerAnimation={undefined}>
+          <IonLabel position="stacked">Name</IonLabel>
+          <IonInput value={name} onIonChange={(e) => setName(e.detail.value!)}>
+            {" "}
+          </IonInput>
+        </IonItem>
+        <IonItem routerAnimation={undefined}>
+          <IonLabel position="stacked">Password</IonLabel>
+          <IonInput
+            value={password}
+            type="password"
+            onIonChange={(e) => setPassword(e.detail.value!)}
+          >
+            {" "}
+          </IonInput>
+        </IonItem>
       </IonContent>
-      <button className="Startbutton">Login</button>
+      {errorMsg && <IonItem routerAnimation={undefined}>{errorMsg}</IonItem>}
+
+      <button className="Startbutton" onClick={() => getUser()}>
+        Login
+      </button>
     </IonPage>
   );
 };

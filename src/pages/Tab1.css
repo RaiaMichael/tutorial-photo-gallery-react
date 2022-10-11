@@ -1,10 +1,57 @@
 ion-content ion-toolbar {
   --background: translucent;
+  display: flex;
 }
+
 
 .PLevel {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 40vh;
+  margin-top: 15vh;
+  padding: 10px;
+}
+
+.fourToSix {
+  margin-top: 50px;
+}
+
+.GradeButton {
+  margin: 20px;
+  height: 200px;
+  width: 200px;
+}
+
+.GradeButton h1 {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 400%;
+}
+
+.p1 {
+  background-color: aqua;
+}
+
+.p2 {
+  background-color: rgb(238, 75, 75);
+}
+
+.p3 {
+  background-color: rgb(245, 175, 89);
+}
+
+.p4 {
+  background-color: rgb(46, 202, 142);
+}
+
+.p5 {
+  background-color: rgb(241, 107, 224);
+}
+
+.p6 {
+  background-color: rgb(80, 77, 218);
+}
+
+.GradeButton:hover {
+  background-color: rgb(255, 255, 255);
+  box-shadow: 5px 5px 5px 5px rgba(108, 233, 58, 0.26);
 }
