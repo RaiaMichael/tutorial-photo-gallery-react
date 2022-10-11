@@ -18,12 +18,14 @@ import {
   IonList,
 } from "@ionic/react";
 import { Link } from "react-router-dom";
+import {useIonRouter} from "@ionic/react";
 
 
 const Login: React.FC = () => {
   const [name, setName] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [errorMsg, setErrorMsg] = useState<string>("");
+  let router = useIonRouter()
 
   async function getUser() {
     console.log("in side---");
@@ -37,8 +39,9 @@ const Login: React.FC = () => {
     const result = await res.json();
     console.log(result);
     // return
+   
     if (result.statusCode === 200) {
-     
+      router.push('/tab1')
     } else {
       setErrorMsg("invalid username or passworrd!");
 
