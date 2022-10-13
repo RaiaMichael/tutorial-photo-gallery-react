@@ -43,6 +43,7 @@ import './theme/variables.css';
 /* Global CSS */
 import './global.css';
 import Question from './pages/Question';
+import Register from './pages/Register';
 
 const App: React.FC = () => (
   <IonApp>
@@ -57,6 +58,7 @@ const App: React.FC = () => (
           <Route path="/login" component={Login} exact={true} />
           <Route path="/subject" component={Subject} exact={true} />
           <Route path="/question" component={Question} exact={true} />
+          <Route path="/register" component={Register} exact={true} />
           
         </IonRouterOutlet>
         <IonTabBar slot="bottom">

@@ -3,6 +3,9 @@ ion-content ion-toolbar {
   display: flex;
 }
 
+.registerButton{
+  margin-top: 5px;
+}
 
 .PLevel {
   display: flex;

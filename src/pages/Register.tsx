@@ -21,15 +21,15 @@ import { Link } from "react-router-dom";
 import {useIonRouter} from "@ionic/react";
 
 
-const Login: React.FC = () => {
+const Register: React.FC = () => {
   const [name, setName] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [errorMsg, setErrorMsg] = useState<string>("");
   let router = useIonRouter()
 
-  async function getUser() {
-    console.log("in side---");
-    const res = await fetch("http://localhost:8080/api/v1/user/login", {
+  async function registerUser() {
+    // console.log("in side---");
+    const res = await fetch("http://localhost:8080/api/v1/user/create", {
       method: "POST",
       headers: {
         "Content-Type": "application/json;charset=utf-8",
@@ -38,7 +38,7 @@ const Login: React.FC = () => {
     });
     const result = await res.json();
     console.log(result.item[0]._id!);
-    // return
+    return
    
     if (result.statusCode === 200) {
       router.push(`/tab1?user_id=${result.item[0]._id}`)
@@ -52,6 +52,7 @@ const Login: React.FC = () => {
   return (
     <IonPage style={{ padding: "50px" }}>
       <IonContent>
+        <h1>登記用戶</h1>
         <IonItem routerAnimation={undefined}>
           <IonLabel position="stacked">Name</IonLabel>
           <IonInput value={name} onIonChange={(e) => setName(e.detail.value!)}>
@@ -71,13 +72,12 @@ const Login: React.FC = () => {
       </IonContent>
       {errorMsg && <IonItem routerAnimation={undefined}>{errorMsg}</IonItem>}
 
-      <button className="Startbutton" onClick={() => getUser()}>
-        Login
+      <button className="Startbutton" onClick={() => registerUser()}>
+      Register
       </button>
-      <div> <button className="Startbutton">Register</button>  </div>
       
     </IonPage>
   );
 };
 
-export default Login;
+export default Register;
