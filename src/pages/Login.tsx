@@ -70,12 +70,12 @@ const Login: React.FC = () => {
         </IonItem>
       </IonContent>
       {errorMsg && <IonItem routerAnimation={undefined}>{errorMsg}</IonItem>}
-
+      <Link to={`/register`}>
       <button className="Startbutton" onClick={() => getUser()}>
         Login
       </button>
       <div> <button className="Startbutton">Register</button>  </div>
-      
+      </Link>
     </IonPage>
   );
 };

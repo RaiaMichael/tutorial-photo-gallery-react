@@ -34,19 +34,19 @@ const Register: React.FC = () => {
       headers: {
         "Content-Type": "application/json;charset=utf-8",
       },
-      body: JSON.stringify({ name: name, password: password }),
+      body: JSON.stringify({ username: name, password: password }),
     });
-    const result = await res.json();
-    console.log(result.item[0]._id!);
-    return
+    // const result = await res.json();
+    // // console.log(result.item[0]._id!);
+    // // return
    
-    if (result.statusCode === 200) {
-      router.push(`/tab1?user_id=${result.item[0]._id}`)
-    } else {
-      setErrorMsg("invalid username or passworrd!");
+    // if (result.statusCode === 200) {
+      router.push(`/login`)
+    // } else {
+    //   setErrorMsg("invalid username or passworrd!");
 
-      return;
-    }
+    //   return;
+    // }
   }
 
   return (
@@ -71,10 +71,11 @@ const Register: React.FC = () => {
         </IonItem>
       </IonContent>
       {errorMsg && <IonItem routerAnimation={undefined}>{errorMsg}</IonItem>}
-
+      
       <button className="Startbutton" onClick={() => registerUser()}>
       Register
       </button>
+      
       
     </IonPage>
   );
