@@ -50,7 +50,9 @@ const Register: React.FC = () => {
   }
 
   return (
-    <IonPage style={{ padding: "50px" }}>
+    <>
+    <div className="bgImage"></div>
+    <IonPage style={{ padding: "200px" }}>
       <IonContent>
         <h1>登記用戶</h1>
         <IonItem routerAnimation={undefined}>
@@ -73,11 +75,10 @@ const Register: React.FC = () => {
       {errorMsg && <IonItem routerAnimation={undefined}>{errorMsg}</IonItem>}
       
       <button className="Startbutton" onClick={() => registerUser()}>
-      Register
+      登記
       </button>
-      
-      
     </IonPage>
+    </>
   );
 };
 

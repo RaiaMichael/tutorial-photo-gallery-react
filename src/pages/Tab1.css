@@ -3,15 +3,26 @@ ion-content ion-toolbar {
   display: flex;
 }
 
-.registerButton{
-  margin-top: 5px;
+.tab1Image {
+  display: flex;
+  justify-content: center;
+  background-image: url("https://i0.wp.com/boingboing.net/wp-content/uploads/2018/05/cool-background1.png?fit=1192%2C600&ssl=1");
+  height: 100vh;
+  width: 100vw;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: fixed;
+  z-index: -1;
+  /* filter: blur(2px) brightness(1); */
+  opacity: 0.8;
 }
 
 .PLevel {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 25vh;
+  margin-top: 30vh;
   padding: 10px;
 }
 
@@ -20,6 +31,10 @@ ion-content ion-toolbar {
 }
 
 .GradeButton {
+  background-image: url("http://img1.gamedog.cn/2020/10/27/4402984-20102G042190-50.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
   margin: 20px;
   height: 200px;
   width: 200px;
@@ -28,10 +43,13 @@ ion-content ion-toolbar {
 .GradeButton h1 {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size: 400%;
+  color: rgb(26, 25, 17);
+  font-weight: 300;
+  
 }
 
 .p1 {
-  background-color: aqua;
+  background-color: rgba(255, 255, 255, 0.541);
 }
 
 .p2 {
@@ -55,6 +73,6 @@ ion-content ion-toolbar {
 }
 
 .GradeButton:hover {
-  background-color: rgb(255, 255, 255);
-  box-shadow: 5px 5px 5px 5px rgba(108, 233, 58, 0.26);
+  background-color: rgba(123, 255, 174, 0.486);
+  box-shadow: 5px 5px 5px 5px rgba(52, 63, 48, 0.26);
 }

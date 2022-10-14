@@ -6,6 +6,7 @@ import {
   IonTitle,
   IonToolbar,
   IonIcon,
+  IonImg,
 } from "@ionic/react";
 import ExploreContainer from "../components/ExploreContainer";
 import "./Tab1.css";
@@ -46,18 +47,29 @@ const Tab1: React.FC = () => {
     getData()
   },[])
 
+  let pPicture: {name: string}[] = [
+    {"name":"https://bpic.51yuansu.com/pic3/cover/03/37/04/5b8fbabfa1ce6_610.jpg?x-oss-process=image/sharpen,100"},
+  ]
+
 
   
   return (
     <IonPage>
+      <div className="tab1Image"></div>
       <IonContent>
         <div className="PLevel 1To3">
+          
+        
       {data.map((ite)=>(
-        <Link to={`/tab/subject?grade_id=${ite._id}&user_id=${user_id}`}>
-        <button key={ite._id} className="GradeButton p1"><h1>{ite.level}</h1></button>
+        <Link to={`/tab/subject?grade_id=${ite._id}&user_id=${user_id}`}> 
+        <button key={ite._id} className="GradeButton p1"><h1>{ite.level}</h1>
+        {/* {pPicture.map((pic)=>(
+          <IonImg src={pic.} />
+        ))} */}
+        </button>
         </Link>  
       ))}
-              
+             
         
         </div>
       </IonContent>

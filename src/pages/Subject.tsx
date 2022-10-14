@@ -52,7 +52,7 @@ const Subject: React.FC = () => {
         <div className='subject'>
       <IonSegment onIonChange={(e: { detail: { value: any; }; }) => console.log(`${e.detail.value} segment selected`)}>
         {data.map((sub)=>(
-          <Link to={`/question?subject_id=${sub._id}&grade_id=${grade_id}&user_id=${user_id}`}>
+          <Link to={`/tab/question?subject_id=${sub._id}&grade_id=${grade_id}&user_id=${user_id}`}>
           <button className="chineseButton" key={sub._id}>
           <IonLabel><IonImg src={sub.picture} /></IonLabel>
           </button>
