@@ -1,5 +1,6 @@
 import React from "react";
 import {
+  IonButton,
   IonContent,
   IonHeader,
   IonPage,
@@ -30,7 +31,7 @@ const Start: React.FC = () => {
   function handleClick() {}
 
   return (
-    <IonPage style={{ marginTop: "50vh" }}>
+    <IonPage >
       <IonContent>
         <div className="bgImage"></div>
         <div
@@ -38,12 +39,13 @@ const Start: React.FC = () => {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
+            height: "100vh",
           }}
         >
-          <Link to="/login">
-            <button className="Startbutton">Start</button>
-          </Link>
+            <IonButton href="/login" >Start</IonButton>
+       
         </div>
+        
       </IonContent>
     </IonPage>
   );

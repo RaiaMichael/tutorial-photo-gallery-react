@@ -1,26 +1,32 @@
-
-
 --ion-content.background {
-   
 }
 
 :root {
-    --ion-background-color: #f3f1d2; 
+  --ion-background-color: #ffffff;
 }
 
 .bgImage {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
+  background-image: url("https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148902771.jpg?w=2000");
+  height: 100vh;
+  width: 100vw;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: fixed;
+  z-index: -1;
+  /* filter: blur(2px) brightness(1); */
+  opacity: 0.3;
 }
 
 .Startbutton {
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: rgb(255, 255, 255);
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-  }
-
+  /* background-color: #4caf50;
+  border: none;
+  color: rgb(255, 255, 255);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px; */
+}

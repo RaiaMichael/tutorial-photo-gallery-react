@@ -53,10 +53,9 @@ const Tab1: React.FC = () => {
       <IonContent>
         <div className="PLevel 1To3">
       {data.map((ite)=>(
-        <Link to={`/subject?grade_id=${ite._id}&user_id=${user_id}`}>
+        <Link to={`/tab/subject?grade_id=${ite._id}&user_id=${user_id}`}>
         <button key={ite._id} className="GradeButton p1"><h1>{ite.level}</h1></button>
-        </Link>
-          
+        </Link>  
       ))}
               
         

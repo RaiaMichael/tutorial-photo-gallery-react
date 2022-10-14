@@ -48,34 +48,39 @@ import Register from './pages/Register';
 const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
-      <IonTabs>
+      <IonRouterOutlet>
+        <Route path="/" component={Start} exact={true} />
+        <Route path="/login" component={Login} exact={true} />
+        <Route path="/register" component={Register} exact={true} />
+        <Route path="/question" component={Question} exact={true} />
+        <Route path="/tab">
+          <IonTabs>
         <IonRouterOutlet>
-          <Route path="/tab1" component={Tab1} exact={true} />
-          <Route path="/tab2" component={Tab2} exact={true} />
-          <Route path="/tab2/details" component={Details} />
-          <Route path="/tab3" component={Tab3} />
-          <Route path="/" component={Start} exact={true} />
-          <Route path="/login" component={Login} exact={true} />
-          <Route path="/subject" component={Subject} exact={true} />
-          <Route path="/question" component={Question} exact={true} />
-          <Route path="/register" component={Register} exact={true} />
+          <Route path="/tab/1" component={Tab1} exact={true} />
+          <Route path="/tab/2" component={Tab2} exact={true} />
+          <Route path="/tab/2/details" component={Details} />
+          <Route path="/tab/3" component={Tab3} />
+          <Route path="/tab/subject" component={Subject} exact={true} />
           
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
-          <IonTabButton tab="tab1" href="/tab1">
+          <IonTabButton tab="tab1" href="/tab/1" >
             <IonIcon icon={book} />
             <IonLabel>Test</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="tab2" href="/tab2">
+          <IonTabButton tab="tab2" href="/tab/2">
             <IonIcon icon={podium} />
             <IonLabel>Rank</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="tab3" href="/tab3">
+          <IonTabButton tab="tab3" href="/tab/3">
             <IonIcon icon={person} />
             <IonLabel>User</IonLabel>
           </IonTabButton>
         </IonTabBar>
       </IonTabs>
+        </Route>
+      </IonRouterOutlet>
+      
     </IonReactRouter>
   </IonApp>
 );

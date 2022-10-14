@@ -6,6 +6,7 @@ import {
   IonTitle,
   IonToolbar,
   IonInput,
+  IonButton,
 } from "@ionic/react";
 import ExploreContainer from "../components/ExploreContainer";
 import "./Tab1.css";
@@ -41,7 +42,7 @@ const Login: React.FC = () => {
     // return
    
     if (result.statusCode === 200) {
-      router.push(`/tab1?user_id=${result.item[0]._id}`)
+      router.push(`/tab/1?user_id=${result.item[0]._id}`)
     } else {
       setErrorMsg("invalid username or passworrd!");
 
