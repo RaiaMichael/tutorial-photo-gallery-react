@@ -28,10 +28,19 @@ interface Question {
   option: any;
   answer: string;
 }
+type AnsRight = {
+    right: string;
+    wrong: string;
+  };
 
 const Question: React.FC = () => {
   const [show, setShow] = useState(false);
   const [data, setData] = useState<Question[]>([]);
+  
+  const ansRight: AnsRight[] = [{ 
+  right: '正確',
+  wrong: '錯誤'
+}];
 
   let params = new URLSearchParams(useLocation().search);
   let grade_id = params.get("grade_id");
@@ -74,6 +83,13 @@ const Question: React.FC = () => {
     const question = await res.json();
     
     setShow(true);
+    if (selected === data[0].answer) {
+      
+    }
+  }
+
+  function showRightWrong() {
+    
   }
 
   return (

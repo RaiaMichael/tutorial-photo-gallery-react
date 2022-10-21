@@ -20,9 +20,11 @@ ion-content ion-toolbar {
 
 .PLevel {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   margin-top: 30vh;
+  margin-bottom: 30vh;
   padding: 10px;
 }
 
@@ -36,8 +38,8 @@ ion-content ion-toolbar {
   background-repeat: no-repeat;
   background-size: contain;
   margin: 20px;
-  height: 200px;
-  width: 200px;
+  height: 300px;
+  width: 300px;
 }
 
 .GradeButton h1 {

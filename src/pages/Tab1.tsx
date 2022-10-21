@@ -35,7 +35,7 @@ const Tab1: React.FC = () => {
 
   let params = new URLSearchParams(useLocation().search)
   let user_id = params.get('user_id')
-  console.log("HAHAHAHAHA",user_id)
+  
 
   async function getData(){
     const res = await fetch('http://localhost:8080/api/v1/grade/get')
@@ -52,7 +52,6 @@ const Tab1: React.FC = () => {
   ]
 
 
-  
   return (
     <IonPage>
       <div className="tab1Image"></div>
