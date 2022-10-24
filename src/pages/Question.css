@@ -1,9 +1,25 @@
+.qImage {
+    display: flex;
+    justify-content: center;
+    background-image: url("https://5.imimg.com/data5/XR/UJ/MY-2429279/kids-wallpaper-1000x1000.jpg");
+    height: 100vh;
+    width: 100vw;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: fixed;
+    z-index: -1;
+    /* filter: blur(2px) brightness(1); */
+    opacity: 0.8;
+  }
+  
+
 
 .QuestionCard {
     padding: 50px;
     margin-top: 10vh;
     font-size: 200%;
-    background-color:rgb(252, 248, 56);
+    background-color:rgb(252, 249, 56);
     box-shadow: 3px 3px 3px 3px;
 }
 
@@ -34,12 +50,12 @@
     border-radius: 10px;
     border: solid rgba(32, 28, 28, 0.253);
     margin-top: 30px;
-    background-color: rgb(87, 213, 245);
+    background-color: rgb(76, 207, 240);
 }
 
 .AnswerCard {
     padding: 30px;
     margin-top: 20px;
     font-size: 30px;
-    background-color:rgb(124, 248, 221);
+    background-color:rgb(57, 255, 212);
 }

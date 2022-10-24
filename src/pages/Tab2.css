@@ -2,12 +2,33 @@ ion-content  {
   --background: translucent;
 }
 
+.rankImage {
+  display: flex;
+  justify-content: center;
+  background-image: url("https://i.ytimg.com/vi/xEWy02U9yU4/maxresdefault.jpg");
+  height: 100vh;
+  width: 100vw;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: fixed;
+  z-index: -1;
+  /* filter: blur(2px) brightness(1); */
+  opacity: 0.8;
+}
+
 .title {
   text-align: center;
-  font-size: larger;
+  background-color: rgb(250, 250, 250);
+  width: 300px;
+  border-radius: 10px;
+}
+.title h1 {
+  font-size: x-large;
 }
 
 .rankOfSubject {
+  
   display: flex;
   justify-content: center;
 }

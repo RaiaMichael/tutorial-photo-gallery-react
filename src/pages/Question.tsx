@@ -30,17 +30,15 @@ interface Question {
 }
 type AnsRight = {
     right: string;
-    wrong: string;
+    
   };
 
 const Question: React.FC = () => {
   const [show, setShow] = useState(false);
   const [data, setData] = useState<Question[]>([]);
-  
-  const ansRight: AnsRight[] = [{ 
-  right: '正確',
-  wrong: '錯誤'
-}];
+  const [check, checked] = useState<string[]>([""])
+   
+  let ans: string = '';
 
   let params = new URLSearchParams(useLocation().search);
   let grade_id = params.get("grade_id");
@@ -66,7 +64,13 @@ const Question: React.FC = () => {
     setSelected("");
     getData();
   }, []);
-
+// function showRightWrong() {
+//     if (selected === data[0].answer) {
+//       ansRight.push({right:"正確"})
+//     } else {
+//       ansRight.push({right:"錯誤"})
+//     }
+//   }
   const [selected, setSelected] = useState<string>("");
 
   async function submitAnswer() {
@@ -84,16 +88,17 @@ const Question: React.FC = () => {
     
     setShow(true);
     if (selected === data[0].answer) {
-      
-    }
+            checked(['正確'])
+          } else {
+            checked(['錯誤'])
+          }
   }
 
-  function showRightWrong() {
-    
-  }
+  
 
   return (
     <IonPage>
+      <div className="qImage"></div>
       <IonContent>
         {data.map((que) => (
           <IonCard className="QuestionCard" routerAnimation={undefined}>
@@ -134,7 +139,7 @@ const Question: React.FC = () => {
         {show && (
           <IonCard className="AnswerCard" routerAnimation={undefined}>
             <IonLabel>
-              答案:{data[0].answer}
+              答案:{data[0].answer} -- {check[0]}
             </IonLabel>
             <div className="nextQusetion">
               <button
@@ -142,8 +147,7 @@ const Question: React.FC = () => {
                   getData();
                   setShow(false);
                 }}
-                className="submit"
-              >
+                className="submit">
                 下一題
               </button>
             </div>

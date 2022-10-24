@@ -124,8 +124,16 @@ const Tab2: React.FC = () => {
 
   return (
     <IonPage>
+      <div className="rankImage 0"></div>
       <div>
-        <IonCard>
+        <IonCard style={{backgroundImage: 'url("https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/pf-s104-0372.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=e1b1ad4ae2db4690837a34ecfeee1b7b"',
+                        display: 'flex',
+                        Wrap: 'wrap',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        borderRadius: '10px',
+                        marginTop: '25px'                 
+                       }}>
           <IonCardContent>
             <div className="rankOfSubject">
               <IonCardSubtitle>
@@ -139,18 +147,17 @@ const Tab2: React.FC = () => {
           </IonCardContent>
           <IonCardHeader>
             <IonCardTitle>
-              <div className="title">小學雞排名</div>
+              <div className="title"><h1>小學雞排名</h1></div>
             </IonCardTitle>
           </IonCardHeader>
 
           <IonCardContent></IonCardContent>
         </IonCard>
-        <IonCard>
+        <IonCard style={{marginTop: '30px',}}>
           {data.map((mark)=>(
-          <IonItem key={mark._id}>
-            <IonIcon icon={trophySharp} slot="start" />
-            <IonLabel></IonLabel>
-            <IonLabel>{mark.username}</IonLabel>
+          <IonItem  key={mark._id} >
+            <IonLabel><IonIcon icon={trophySharp} slot="start" /></IonLabel>
+            <IonLabel><h2>{mark.username}</h2></IonLabel>
             <IonLabel>{selected === "chinese" || selected ===''? mark.chineseMarks : selected === "english"?mark.englishMarks: selected ==="math"?mark.mathMarks: selected ==="common" ?mark.commonMarks: mark.allMarks}</IonLabel>
           </IonItem>
           ))}
