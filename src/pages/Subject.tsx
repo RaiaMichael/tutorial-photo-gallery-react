@@ -58,6 +58,7 @@ const Subject: React.FC = () => {
           </button>
           </Link>
         ))}
+        {items.map((ite)=>(<div></div>))}
         </div>
         
       </IonContent>

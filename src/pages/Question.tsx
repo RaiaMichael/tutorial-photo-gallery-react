@@ -67,6 +67,14 @@ const Question: React.FC = () => {
   }, []);
   const [selected, setSelected] = useState<string>("");
 
+  // type catchUserId = {
+  //   user: any
+  // }
+  // const catchUserId: catchUserId[]  = [{
+  //   user: user_id
+  // }]
+
+
   async function submitAnswer() {
     const res = await fetch(
       "http://localhost:8080/api/v1/question/submitAnswer",
@@ -154,7 +162,9 @@ const Question: React.FC = () => {
           </IonCard>
         )}
         {nextShow &&(
-          <IonButton href="/tab/3"></IonButton>
+          <div className="checkRank">
+          <IonButton href={`/tab/1?user_id=${user_id}`}><h1>已完成</h1></IonButton>
+          </div>
         )}
       </IonContent>
     </IonPage>
