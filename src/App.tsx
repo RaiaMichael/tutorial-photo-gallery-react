@@ -1,5 +1,5 @@
 import React from 'react';
-import { Redirect, Route } from 'react-router-dom';
+import { Redirect, Route, useLocation } from 'react-router-dom';
 import {
   IonApp,
   IonIcon,
@@ -44,6 +44,12 @@ import './theme/variables.css';
 import './global.css';
 import Question from './pages/Question';
 import Register from './pages/Register';
+
+// let params = new URLSearchParams(useLocation().search);
+//   let grade_id = params.get("grade_id");
+//   let subject_id = params.get("subject_id");
+//   let user_id= params.get('user_id')
+
 
 const App: React.FC = () => (
   <IonApp>

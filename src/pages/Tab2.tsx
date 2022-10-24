@@ -41,6 +41,8 @@ import {
 import { usePhotoGallery, UserPhoto } from "../hooks/usePhotoGallery";
 import "./Tab2.css";
 
+
+
 interface User{
   _id: string;
   username: string;
@@ -75,11 +77,6 @@ const Tab2: React.FC = () => {
     
   }
 
-  console.log(data)
-  // const sumWithInitial = array1.reduce(
-  //   (previousValue: User, currentValue:User) => previousValue + currentValue,
-  //   initialValue
-  // );
 
   
 // expected output: 10
