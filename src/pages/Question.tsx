@@ -37,8 +37,9 @@ const Question: React.FC = () => {
   const [show, setShow] = useState(false);
   const [data, setData] = useState<Question[]>([]);
   const [check, checked] = useState<string[]>([""])
+  const [count, setCount] = useState(0)
+  const [nextShow, setNextShow] = useState(false);
    
-  let ans: string = '';
 
   let params = new URLSearchParams(useLocation().search);
   let grade_id = params.get("grade_id");
@@ -64,13 +65,6 @@ const Question: React.FC = () => {
     setSelected("");
     getData();
   }, []);
-// function showRightWrong() {
-//     if (selected === data[0].answer) {
-//       ansRight.push({right:"正確"})
-//     } else {
-//       ansRight.push({right:"錯誤"})
-//     }
-//   }
   const [selected, setSelected] = useState<string>("");
 
   async function submitAnswer() {
@@ -92,8 +86,14 @@ const Question: React.FC = () => {
           } else {
             checked(['錯誤'])
           }
+    setCount(count + 1);
+    console.log('.............',count)
+    if (count >= 4) {
+      setNextShow(true)
+      setShow(false)
+    }
   }
-
+  
   
 
   return (
@@ -152,6 +152,9 @@ const Question: React.FC = () => {
               </button>
             </div>
           </IonCard>
+        )}
+        {nextShow &&(
+          <IonButton href="/tab/3"></IonButton>
         )}
       </IonContent>
     </IonPage>
