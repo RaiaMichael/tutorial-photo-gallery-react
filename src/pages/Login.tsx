@@ -38,7 +38,7 @@ const Login: React.FC = () => {
       body: JSON.stringify({ name: name, password: password }),
     });
     const result = await res.json();
-    console.log(result.item[0]._id!);
+    // console.log(result.item[0]._id!);
     // return
    
     if (result.statusCode === 200) {

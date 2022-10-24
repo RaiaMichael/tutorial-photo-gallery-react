@@ -64,17 +64,17 @@ const App: React.FC = () => (
           <Route path="/tab/question" component={Question} exact={true} />
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
-          <IonTabButton tab="tab1" href="/tab/1" >
+          <IonTabButton tab="login" href="/login" >
+            <IonIcon icon={person} />
+            <IonLabel>登出</IonLabel>
+          </IonTabButton>
+          <IonTabButton tab="tab1" href="/tab/1">
             <IonIcon icon={book} />
-            <IonLabel>Test</IonLabel>
+            <IonLabel>年級</IonLabel>
           </IonTabButton>
           <IonTabButton tab="tab2" href="/tab/2">
             <IonIcon icon={podium} />
-            <IonLabel>Rank</IonLabel>
-          </IonTabButton>
-          <IonTabButton tab="tab3" href="/tab/3">
-            <IonIcon icon={person} />
-            <IonLabel>User</IonLabel>
+            <IonLabel>排行榜</IonLabel>
           </IonTabButton>
         </IonTabBar>
       </IonTabs>
