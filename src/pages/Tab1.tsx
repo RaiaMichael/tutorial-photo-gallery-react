@@ -34,7 +34,7 @@ const Tab1: React.FC = () => {
   const [data, setData] = useState<Grades[]>([])
 
   let params = new URLSearchParams(useLocation().search)
-  let user_id = params.get('user_id')
+  // let user_id = params.get('user_id')
   
 
   async function getData(){
@@ -60,7 +60,8 @@ const Tab1: React.FC = () => {
           
         
       {data.map((ite)=>(
-        <Link to={`/tab/subject?grade_id=${ite._id}&user_id=${user_id}`}> 
+        <Link to={`/tab/subject?grade_id=${ite._id}`}> 
+        {/* <Link to={`/tab/subject?grade_id=${ite._id}&user_id=${user_id}`}>  */}
         <button key={ite._id} className="GradeButton p1"><h1>{ite.level}</h1>
         {/* {pPicture.map((pic)=>(
           <IonImg src={pic.} />

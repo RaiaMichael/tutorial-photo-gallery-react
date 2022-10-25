@@ -18,7 +18,7 @@ const Subject: React.FC = () => {
 
   let params = new URLSearchParams(useLocation().search)
   let grade_id = params.get('grade_id')
-  let user_id= params.get('user_id')
+  // let user_id= params.get('user_id')
   
   console.log("比我睇下",grade_id)
 
@@ -52,7 +52,8 @@ const Subject: React.FC = () => {
         <div className='subjectImage '></div>
         <div className='subject'>
         {data.map((sub)=>(
-          <Link to={`/tab/question?subject_id=${sub._id}&grade_id=${grade_id}&user_id=${user_id}`}>
+          <Link to={`/question?subject_id=${sub._id}&grade_id=${grade_id}`}>
+            {/* <Link to={`/question?subject_id=${sub._id}&grade_id=${grade_id}&user_id=${user_id}`}></Link> */}
           <button className="chineseButton" key={sub._id}>
           <IonLabel><IonImg src={sub.picture} /></IonLabel>
           </button>

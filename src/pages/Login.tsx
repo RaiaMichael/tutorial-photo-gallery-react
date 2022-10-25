@@ -42,7 +42,9 @@ const Login: React.FC = () => {
     // return
    
     if (result.statusCode === 200) {
-      router.push(`/tab/1?user_id=${result.item[0]._id}`)
+      router.push(`/tab/1`)
+      localStorage.setItem("user_id", result.item[0]._id);
+      // router.push(`/tab/1?user_id=${result.item[0]._id}`)
     } else {
       setErrorMsg("invalid username or passworrd!");
 
@@ -75,10 +77,11 @@ const Login: React.FC = () => {
         </IonItem>
       </IonContent>
       {errorMsg && <IonItem routerAnimation={undefined}>{errorMsg}</IonItem>}
-      <Link to={`/register`}>
+      
       <button className="Startbutton" onClick={() => getUser()}>
         登入
       </button>
+      <Link to={`/register`}>
       <div> <button className="Registerbutton">登記</button>  </div>
       </Link>
     </IonPage>

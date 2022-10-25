@@ -40,7 +40,7 @@ import {
 } from "ionicons/icons";
 import { usePhotoGallery, UserPhoto } from "../hooks/usePhotoGallery";
 import "./Tab2.css";
-
+import { useLocation } from "react-router-dom";
 
 
 interface User{
@@ -57,7 +57,8 @@ interface User{
 const Tab2: React.FC = () => {
   const [data, setData]=  useState<User[]>([])
   const [selected, setSelected] = useState<String>("")
-  
+  let params = new URLSearchParams(useLocation().search)
+  let user_id = params.get('user_id')
 
   async function getData(){
     const res = await fetch('http://localhost:8080/api/v1/user/getalluser',
