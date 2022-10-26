@@ -36,7 +36,6 @@ const Tab1: React.FC = () => {
   let params = new URLSearchParams(useLocation().search)
   // let user_id = params.get('user_id')
   
-
   async function getData(){
     const res = await fetch('http://localhost:8080/api/v1/grade/get')
     const ele = await res.json()
