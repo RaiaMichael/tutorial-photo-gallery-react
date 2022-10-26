@@ -57,12 +57,10 @@ const Tab1: React.FC = () => {
       <div className="tab1Image"></div>
       <IonContent>
         <div className="PLevel 1To3">
-          
-        
       {data.map((ite)=>(
         <Link to={`/tab/subject?grade_id=${ite._id}`}> 
         {/* <Link to={`/tab/subject?grade_id=${ite._id}&user_id=${user_id}`}>  */}
-        <button key={ite._id} className="GradeButton p1"><h1>{ite.level}</h1>
+        <button key={ite._id} className="GradeButton p1"><h1 key={ite.level}>{ite.level}</h1>
         {/* {pPicture.map((pic)=>(
           <IonImg src={pic.} />
         ))} */}
