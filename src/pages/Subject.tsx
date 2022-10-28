@@ -5,6 +5,7 @@ import { usePhotoGallery, UserPhoto } from '../hooks/usePhotoGallery';
 import "./Subject.css";
 import { Link } from 'react-router-dom';
 import { useLocation, useParams } from "react-router";
+import { API_ORIGIN } from '../api';
 
 
 interface Subject { 
@@ -23,7 +24,7 @@ const Subject: React.FC = () => {
   console.log("比我睇下",grade_id)
 
   async function getData(){
-    const res = await fetch('http://localhost:8080/api/v1/subject/get')
+    const res = await fetch(API_ORIGIN+'/api/v1/subject/get')
     const el = await res.json()
     setData(el.data)
   }

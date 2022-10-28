@@ -19,6 +19,7 @@ import {
 } from "@ionic/react";
 import { Link } from "react-router-dom";
 import {useIonRouter} from "@ionic/react";
+import { API_ORIGIN } from "../api";
 
 
 const Register: React.FC = () => {
@@ -29,7 +30,7 @@ const Register: React.FC = () => {
 
   async function registerUser() {
     // console.log("in side---");
-    const res = await fetch("http://localhost:8080/api/v1/user/create", {
+    const res = await fetch(API_ORIGIN+"/api/v1/user/create", {
       method: "POST",
       headers: {
         "Content-Type": "application/json;charset=utf-8",

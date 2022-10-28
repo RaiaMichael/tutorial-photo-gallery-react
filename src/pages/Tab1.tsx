@@ -22,6 +22,7 @@ import { informationCircle, map } from "ionicons/icons";
 import { Link } from "react-router-dom";
 import ReactDOM from "react-dom";
 import { useLocation, useParams } from "react-router"
+import { API_ORIGIN } from "../api";
 
 interface Grades { 
   _id: string;
@@ -37,7 +38,7 @@ const Tab1: React.FC = () => {
   // let user_id = params.get('user_id')
   
   async function getData(){
-    const res = await fetch('http://localhost:8080/api/v1/grade/get')
+    const res = await fetch(API_ORIGIN+'/api/v1/grade/get')
     const ele = await res.json()
     setData(ele.data)
   }

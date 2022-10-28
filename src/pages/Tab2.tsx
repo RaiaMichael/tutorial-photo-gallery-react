@@ -41,6 +41,7 @@ import {
 import { usePhotoGallery, UserPhoto } from "../hooks/usePhotoGallery";
 import "./Tab2.css";
 import { useLocation } from "react-router-dom";
+import { API_ORIGIN } from "../api";
 
 
 interface User{
@@ -61,7 +62,7 @@ const Tab2: React.FC = () => {
   let user_id = params.get('user_id')
 
   async function getData(){
-    const res = await fetch('http://localhost:8080/api/v1/user/getalluser',
+    const res = await fetch(API_ORIGIN+'/api/v1/user/getalluser',
     {
       method: "POST",
       headers: {

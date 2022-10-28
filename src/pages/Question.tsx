@@ -19,6 +19,7 @@ import "./Question.css";
 import { pin } from "ionicons/icons";
 import { useLocation, useParams } from "react-router";
 import { getDefaultNormalizer } from "@testing-library/react";
+import { API_ORIGIN } from "../api";
 
 interface Question {
   _id: string;
@@ -53,7 +54,7 @@ const Question: React.FC = () => {
 
   async function getData() {
     const res = await fetch(
-      "http://localhost:8080/api/v1/question/findQuestion",
+      API_ORIGIN+"/api/v1/question/findQuestion",
       {
         method: "POST",
         headers: {
@@ -85,7 +86,7 @@ console.log(data)
 
   async function submitAnswer() {
     const res = await fetch(
-      "http://localhost:8080/api/v1/question/submitAnswer",
+      API_ORIGIN+"/api/v1/question/submitAnswer",
       {
         method: "POST",
         headers: {
