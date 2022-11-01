@@ -38,7 +38,7 @@ const Tab1: React.FC = () => {
   // let user_id = params.get('user_id')
   
   async function getData(){
-    const res = await fetch(API_ORIGIN+'/api/v1/grade/get')
+    const res = await fetch('https://api.michaelraia.me/api/v1/grade/get')
     const ele = await res.json()
     setData(ele.data)
   }

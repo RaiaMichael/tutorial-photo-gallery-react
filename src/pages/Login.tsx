@@ -55,18 +55,21 @@ const Login: React.FC = () => {
   return (
     <>
   <div className="bgImage"></div>
-    <IonPage style={{ padding: "200px" }}>
+    <IonPage style={{ padding: "20px" }}>
       
       <IonContent>
-      
+      <div className="inputName">
         <IonItem routerAnimation={undefined}>
-          <IonLabel position="stacked"><h1>Name</h1></IonLabel>
+          
+          <IonLabel style={{ marginBottom: "10px" }} position="stacked"><h1>Name</h1></IonLabel>
           <IonInput value={name} onIonChange={(e) => setName(e.detail.value!)}>
             {" "}
           </IonInput>
         </IonItem>
+        </div>
+        <div className="inputPasword">
         <IonItem routerAnimation={undefined}>
-          <IonLabel position="stacked"><h1>Password</h1></IonLabel>
+          <IonLabel style={{ marginBottom: "10px" }} position="stacked"><h1>Password</h1></IonLabel>
           <IonInput
             value={password}
             type="password"
@@ -75,15 +78,17 @@ const Login: React.FC = () => {
             {" "}
           </IonInput>
         </IonItem>
+        </div>
       </IonContent>
       {errorMsg && <IonItem routerAnimation={undefined}>{errorMsg}</IonItem>}
-      
-      <button className="Startbutton" onClick={() => getUser()}>
+      <div className="userLogin">
+      <button className="loginButton" onClick={() => getUser()}>
         登入
       </button>
       <Link to={`/register`}>
       <div> <button className="Registerbutton">登記</button>  </div>
       </Link>
+      </div>
     </IonPage>
     </>
   );

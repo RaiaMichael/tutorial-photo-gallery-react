@@ -41,6 +41,7 @@ const Question: React.FC = () => {
   const [count, setCount] = useState(0)
   const [nextShow, setNextShow] = useState(false);
   const [num, setNum] = useState<number>(0)
+  const [loading, setLoading] = useState(true)
   
    
 
@@ -111,8 +112,14 @@ console.log(data)
     if (count >= 4) {
       setNextShow(true)
       setShow(false)
+      setLoading(false)
     }
   }
+//   async function handleSubmit() {
+//     if (count >= 4) {
+      
+//     }
+// }
   
   
 
@@ -146,9 +153,9 @@ console.log(data)
                     <IonRadio slot="start" key={num} value={data[num].option[3].content!} />
                   </IonItem>
                   <IonItem routerAnimation={undefined}>
-                    <button onClick={() => submitAnswer()} className="submit">
+                   {loading && (<button onClick={() => submitAnswer()} className="submit">
                       Submit
-                    </button>
+                    </button>)}
                   </IonItem>
                 </IonRadioGroup>
               </IonCardContent>
@@ -159,14 +166,15 @@ console.log(data)
         {show && (
           <IonCard className="AnswerCard" routerAnimation={undefined}>
             <IonLabel >
-              答案:{data[num].answer} -- {check[0]}
+            正確答案:  {data[num].answer} -- {check[0]}
             </IonLabel>
             <div className="nextQusetion">
-              <button
+              <button 
                 onClick={() => {
                   setNum(num + 1);
                   setShow(false);
-                }}
+                  
+                }} 
                 className="submit">
                 下一題
               </button>
@@ -174,10 +182,15 @@ console.log(data)
           </IonCard>
         )}
         {nextShow &&(
-          <div className="checkRank">
-          <IonButton href={`/tab/1`}><h1>已完成</h1></IonButton>
+          <IonCard className="EndCard" routerAnimation={undefined}>
+            <IonLabel >
+              正確答案:  {data[num].answer} -- {check[0]}
+            </IonLabel>
+          <div >
+          <IonButton className="goBack" href={`/tab/1`}><h1>已完成</h1></IonButton>
           {/* <IonButton href={`/tab/1?user_id=${user_id}`}><h1>已完成</h1></IonButton> */}
           </div>
+          </IonCard>
         )}
       </IonContent>
     </IonPage>

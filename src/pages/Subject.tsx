@@ -24,7 +24,7 @@ const Subject: React.FC = () => {
   console.log("比我睇下",grade_id)
 
   async function getData(){
-    const res = await fetch(API_ORIGIN+'/api/v1/subject/get')
+    const res = await fetch('https://api.michaelraia.me/api/v1/subject/get')
     const el = await res.json()
     setData(el.data)
   }

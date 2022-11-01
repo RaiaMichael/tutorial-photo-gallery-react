@@ -53,11 +53,27 @@
     background-color: rgb(76, 207, 240);
 }
 
+.goBack {
+    height: 60px;
+    width: 100px;
+    border-radius: 10px;
+    border: solid rgba(32, 28, 28, 0.253);
+    margin-top: 30px;
+    background-color: rgb(76, 207, 240);
+}
+
 .AnswerCard {
     padding: 30px;
     margin-top: 20px;
     font-size: 30px;
     background-color:rgb(57, 255, 212);
+}
+
+.EndCard {
+    padding: 30px;
+    margin-top: 20px;
+    font-size: 30px;
+    background-color:rgb(169, 236, 167);
 }
 
 .checkRank {

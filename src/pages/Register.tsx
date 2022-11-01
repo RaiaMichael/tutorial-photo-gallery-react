@@ -37,33 +37,28 @@ const Register: React.FC = () => {
       },
       body: JSON.stringify({ username: name, password: password }),
     });
-    // const result = await res.json();
-    // // console.log(result.item[0]._id!);
-    // // return
-   
-    // if (result.statusCode === 200) {
-      router.push(`/login`)
-    // } else {
-    //   setErrorMsg("invalid username or passworrd!");
 
-    //   return;
-    // }
+      router.push(`/login`)
+ 
   }
 
   return (
     <>
     <div className="bgImage"></div>
-    <IonPage style={{ padding: "200px" }}>
+    <IonPage style={{ padding: "20px" }}>
       <IonContent>
         <h1>登記用戶</h1>
+        <div className="inputName">
         <IonItem routerAnimation={undefined}>
-          <IonLabel position="stacked">Name</IonLabel>
+          <IonLabel style={{ marginBottom: "10px" }} position="stacked">Name</IonLabel>
           <IonInput value={name} onIonChange={(e) => setName(e.detail.value!)}>
             {" "}
           </IonInput>
         </IonItem>
+        </div>
+        <div className="inputPasword">
         <IonItem routerAnimation={undefined}>
-          <IonLabel position="stacked">Password</IonLabel>
+          <IonLabel style={{ marginBottom: "10px" }} position="stacked">Password</IonLabel>
           <IonInput
             value={password}
             type="password"
@@ -72,6 +67,7 @@ const Register: React.FC = () => {
             {" "}
           </IonInput>
         </IonItem>
+        </div>
       </IonContent>
       {errorMsg && <IonItem routerAnimation={undefined}>{errorMsg}</IonItem>}
       
