@@ -73,6 +73,7 @@ console.log(data)
   useEffect(() => {
     setSelected("");
     getData();
+    setLoading(true)
   }, []);
   const [selected, setSelected] = useState<string>("");
 
@@ -97,7 +98,7 @@ console.log(data)
       }
     );
     const question = await res.json();
-    
+    setLoading(false)
     setShow(true);
     console.log('sel---',selected)
     console.log('answe----',data[num].answer)
@@ -112,7 +113,7 @@ console.log(data)
     if (count >= 4) {
       setNextShow(true)
       setShow(false)
-      setLoading(false)
+      
     }
   }
 //   async function handleSubmit() {
@@ -173,7 +174,7 @@ console.log(data)
                 onClick={() => {
                   setNum(num + 1);
                   setShow(false);
-                  
+                  setLoading(true)
                 }} 
                 className="submit">
                 下一題
